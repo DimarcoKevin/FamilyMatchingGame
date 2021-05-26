@@ -3,6 +3,9 @@ $(document).ready(function() {
     var questions = 8
     var answers = 3
     
+
+    getQuestions()
+    
     // main function to use jquery to append questions
     $(".page").append(
         `<div class="name">
@@ -24,3 +27,21 @@ $(document).ready(function() {
         }
     }
 });
+
+function getQuestions() {
+
+    $.ajax({
+        dataType: "json",
+        url: "questions.json",
+        success: function(data) {
+            var questions = data.questions
+            var items = []
+            $.each(questions, function(key, val) {
+                items.push(val)
+                console.log(val)
+            });
+        }
+    });
+    console.log("ajax")
+
+}
