@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-    var questions = 8
-    var answers = 3
+    let questions = 3
+    let answers = 3
     
 
     getQuestions()
@@ -10,8 +10,8 @@ $(document).ready(function() {
     $(".page").append(
         `<div class="name">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
-        </div>`
+        <input type="text" id="name" name="name"></div>
+        <br><br>`
     )
 
     for (var i = 1; i <= questions; i++) {   
@@ -25,6 +25,9 @@ $(document).ready(function() {
             <input type="text" id="Q${i}A${j}" name="Q${i}A${j}"><br><br>`
             )
         }
+        $(".page").append(
+            `</div>`
+        )
     }
 });
 
